@@ -1,0 +1,244 @@
+:root {
+  --color-bg: #000000;
+  --color-accent: #EE4912;
+  --color-muted: #C6C2BD;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-muted);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+/* 1. Navbar background + tieň */
+.custom-navbar {
+  background-color: #111111 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* 2. Logo veľkosť */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* 3. Farby odkazov v navbare */
+.navbar .nav-link {
+  color: var(--color-muted);
+  margin-right: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* 4. Aktívny link */
+.navbar .nav-link.active {
+  color: var(--color-accent) !important;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* 5. Hover efekty nav-link */
+.navbar .nav-link:hover {
+  color: #ffffff;
+}
+
+/* 6. Layout stránky */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem 1.5rem;
+}
+
+/* 7. Základný štýl page */
+.page {
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* 8. Nadpisy */
+.page h1,
+.page h2 {
+  color: #ffffff;
+}
+
+/* 9. Formulár techniky */
+.technika-form {
+  background-color: #202020;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+.technika-form .btn-submit {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* 10. Tabuľka techniky */
+.technika-table-wrapper {
+  background-color: #202020;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.technika-table thead {
+  background-color: #2a2a2a;
+}
+
+.technika-table th {
+  color: var(--color-muted);
+}
+
+/* 11. Thumbnail obrázok */
+.technika-thumb {
+  max-width: 80px;
+  max-height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #333333;
+}
+
+/* 12. Toolbar s filtrom */
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+/* 13. Filter input */
+.filter-input {
+  max-width: 280px;
+  background-color: #151515;
+  border-color: #333333;
+  color: #ffffff;
+}
+
+/* 14. Notifikácia (zelený popup) */
+.notification {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1050;
+  min-width: 260px;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+  animation: fade-in-up 0.2s ease-out;
+}
+
+.notification-success {
+  background-color: #198754; /* zelená */
+  color: #ffffff;
+}
+
+.notification-error {
+  background-color: #b02a37;
+  color: #ffffff;
+}
+
+.notification-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-add-technika {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* vlastný modal */
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-custom {
+  background-color: #202020;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+  border-top: 3px solid var(--color-accent);
+}
+
+.modal-custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.modal-custom-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.btn-close-custom {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-custom-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* 15. Animácia */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 16. Responzívny obsah */
+@media (max-width: 576px) {
+  .app-main {
+    padding: 0.75rem;
+  }
+  .page {
+    padding: 1rem;
+  }
+  .notification {
+    right: 0.75rem;
+    left: 0.75rem;
+  }
+}
